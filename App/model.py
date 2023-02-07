@@ -27,7 +27,13 @@
 
 import config as cf
 from DISClib.ADT import list as lt
+from DISClib.ADT import stack as st
+from DISClib.ADT import queue as qu
 from DISClib.Algorithms.Sorting import shellsort as sa
+from DISClib.Algorithms.Sorting import insertionsort as ins
+from DISClib.Algorithms.Sorting import selectionsort as se
+from DISClib.Algorithms.Sorting import mergesort as merg
+from DISClib.Algorithms.Sorting import quicksort as quk
 assert cf
 
 """
@@ -37,12 +43,134 @@ los mismos.
 
 # Construccion de modelos
 
-# Funciones para agregar informacion al catalogo
+def newDataStructs():
+    """
+    Inicializa las estructuras de datos del modelo. Las crea 
+    de manera vacía para posteriormente almacenar la información.
+    """
+    dataStructs = {
+        "data": None,
+    }
+
+    dataStructs["data"] = lt.newList(datastructure="ARRAY_LIST")
+
+    return dataStructs
+
+# Funciones para agregar informacion al modelo
+
+def addData(dataStructs, data):
+    """
+    Función para agregar nuevos elementos a la lista
+    """
+    d = newData(data["id"], data["info"])
+    lt.addLast(dataStructs["data"], d)
+
+    return dataStructs
 
 # Funciones para creacion de datos
 
+def newData(id, info):
+    """
+    Crea una nueva estructura para modelar los datos
+    """
+    data = {'id': 0, "info": ""}
+    data["id"] = id
+    data["info"] = info
+
+    return data
+
 # Funciones de consulta
+
+def getData(dataStructs, id):
+    """
+    Retorna un dato a partir de su ID
+    """
+    posData = lt.isPresent(dataStructs["data"], id)
+    if posData > 0:
+        data = lt.getElement(dataStructs["data"], posData)
+        return data
+    return None
+
+def dataSize(dataStructs):
+    """
+    Retorna el tamaño de la lista de datos
+    """
+    return lt.size(dataStructs["data"])
+
+def req1(dataStructs):
+    """
+    Función que soluciona el requerimiento 1
+    """
+    # TODO: Realizar el requerimiento 1
+    pass
+
+def req2(dataStructs):
+    """
+    Función que soluciona el requerimiento 2
+    """
+    # TODO: Realizar el requerimiento 2
+    pass
+
+def req3(dataStructs):
+    """
+    Función que soluciona el requerimiento 3
+    """
+    # TODO: Realizar el requerimiento 3
+    pass
+
+def req4(dataStructs):
+    """
+    Función que soluciona el requerimiento 4
+    """
+    # TODO: Realizar el requerimiento 4
+    pass
+
+def req5(dataStructs):
+    """
+    Función que soluciona el requerimiento 5
+    """
+    # TODO: Realizar el requerimiento 5
+    pass
+
+def req6(dataStructs):
+    """
+    Función que soluciona el requerimiento 6
+    """
+    # TODO: Realizar el requerimiento 6
+    pass
+
+def req7(dataStructs):
+    """
+    Función que soluciona el requerimiento 7
+    """
+    # TODO: Realizar el requerimiento 7
+    pass
+
+def req8(dataStructs):
+    """
+    Función que soluciona el requerimiento 8
+    """
+    # TODO: Realizar el requerimiento 8
+    pass
 
 # Funciones utilizadas para comparar elementos dentro de una lista
 
+def compare(data1, data2):
+    """
+    Función encargada de comparar dos datos
+    """
+    if data1["id"] > data2["id"]:
+        return 1
+    elif data1["id"] < data2["id"]:
+        return -1
+    else:
+        return 0
+
 # Funciones de ordenamiento
+
+def sort(dataStructs):
+    """
+    Función encargada de ordenar la lista con los datos
+    """
+    sa.sort(dataStructs["data"], compare)
+
