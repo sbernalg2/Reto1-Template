@@ -37,17 +37,17 @@ operación solicitada
 """
 
 
-def newController():
+def new_controller():
     """
         Se crea una instancia del controlador
     """
-    control = controller.newController()
+    control = controller.new_controller()
     return control
 
 
-def printMenu():
+def print_menu():
     print("Bienvenido")
-    print("1- Cargar información en el catálogo")
+    print("1- Cargar información")
     print("2- Ejecutar Requerimiento 1")
     print("3- Ejecutar Requerimiento 2")
     print("4- Ejecutar Requerimiento 3")
@@ -60,133 +60,135 @@ def printMenu():
     print("0- Salir")
 
 
-def loadData(control):
+def load_data(control):
     """
     Carga los datos
     """
-    data = controller.loadData(control, "Ruta")
+    data = controller.load_data(control, "Ruta")
     return data
 
 
-def printData(control, id):
+def print_data(control, id):
     """
         Función que imprime un dato dado su ID
     """
-    data = controller.getData(control, id)
+    data = controller.get_data(control, id)
     print("El dato con el ID", id, "es:", data)
 
 
-def printReq1(control):
+def print_req_1(control):
     """
         Función que imprime la solución del Requerimiento 1 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 1
-    print(controller.req1(control))
+    print(controller.req_1(control))
 
 
-def printReq2(control):
+def print_req_2(control):
     """
         Función que imprime la solución del Requerimiento 2 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 2
-    print(controller.req2(control))
+    print(controller.req_2(control))
 
 
-def printReq3(control):
+def print_req_3(control):
     """
         Función que imprime la solución del Requerimiento 3 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 3
-    print(controller.req3(control))
+    print(controller.req_3(control))
 
 
-def printReq4(control):
+def print_req_4(control):
     """
         Función que imprime la solución del Requerimiento 4 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 4
-    print(controller.req4(control))
+    print(controller.req_4(control))
 
 
-def printReq5(control):
+def print_req_5(control):
     """
         Función que imprime la solución del Requerimiento 5 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 5
-    print(controller.req5(control))
+    print(controller.req_5(control))
 
 
-def printReq6(control):
+def print_req_6(control):
     """
         Función que imprime la solución del Requerimiento 6 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 6
-    print(controller.req6(control))
+    print(controller.req_6(control))
 
 
-def printReq7(control):
+def print_req_7(control):
     """
         Función que imprime la solución del Requerimiento 7 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 7
-    print(controller.req7(control))
+    print(controller.req_7(control))
 
 
-def printReq8(control):
+def print_req_8(control):
     """
         Función que imprime la solución del Requerimiento 8 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 8
-    print(controller.req8(control))
+    print(controller.req_8(control))
 
 
 # Se crea el controlador asociado a la vista
-control = newController()
+control = new_controller()
 
 # main del reto
 if __name__ == "__main__":
     """
     Menu principal
     """
-    while True:
-        printMenu()
+    working = True
+    #ciclo del menu
+    while working:
+        print_menu()
         inputs = input('Seleccione una opción para continuar\n')
         try:
             if int(inputs) == 1:
                 print("Cargando información de los archivos ....\n")
-                data = loadData(control)
+                data = load_data(control)
             elif int(inputs) == 2:
-                printReq1(control)
+                print_req_1(control)
 
             elif int(inputs) == 3:
-                printReq2(control)
+                print_req_2(control)
 
             elif int(inputs) == 4:
-                printReq3(control)
+                print_req_3(control)
 
             elif int(inputs) == 5:
-                printReq4(control)
+                print_req_4(control)
 
             elif int(inputs) == 6:
-                printReq5(control)
+                print_req_5(control)
 
             elif int(inputs) == 7:
-                printReq6(control)
+                print_req_6(control)
 
             elif int(inputs) == 8:
-                printReq7(control)
+                print_req_7(control)
 
             elif int(inputs) == 9:
-                printReq8(control)
+                print_req_8(control)
 
             elif int(inputs) == 10:
                 id = input("Ingrese un id: ")
-                printData(control, id)
+                print_data(control, id)
 
             elif int(inputs) == 0:
+                working = False
                 print("\nGracias por utilizar el programa")
-                break
-
+                
             else:
                 print("Opción errónea, vuelva a elegir.\n")
         except ValueError:

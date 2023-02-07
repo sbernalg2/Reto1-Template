@@ -44,36 +44,36 @@ dos listas, una para los videos, otra para las categorias de los mismos.
 # Construccion de modelos
 
 
-def newDataStructs():
+def new_data_structs():
     """
     Inicializa las estructuras de datos del modelo. Las crea de
     manera vacía para posteriormente almacenar la información.
     """
-    dataStructs = {
+    data_structs = {
         "data": None,
     }
 
-    dataStructs["data"] = lt.newList(datastructure="ARRAY_LIST",
+    data_structs["data"] = lt.newList(datastructure="ARRAY_LIST",
                                      cmpfunction=compare)
 
-    return dataStructs
+    return data_structs
 
 
 # Funciones para agregar informacion al modelo
 
-def addData(dataStructs, data):
+def add_data(data_structs, data):
     """
     Función para agregar nuevos elementos a la lista
     """
-    d = newData(data["id"], data["info"])
-    lt.addLast(dataStructs["data"], d)
+    d = new_data(data["id"], data["info"])
+    lt.addLast(data_structs["data"], d)
 
-    return dataStructs
+    return data_structs
 
 
 # Funciones para creacion de datos
 
-def newData(id, info):
+def new_data(id, info):
     """
     Crea una nueva estructura para modelar los datos
     """
@@ -86,25 +86,25 @@ def newData(id, info):
 
 # Funciones de consulta
 
-def getData(dataStructs, id):
+def get_data(data_structs, id):
     """
     Retorna un dato a partir de su ID
     """
-    posData = lt.isPresent(dataStructs["data"], id)
-    if posData > 0:
-        data = lt.getElement(dataStructs["data"], posData)
+    pos_data = lt.isPresent(data_structs["data"], id)
+    if pos_data > 0:
+        data = lt.getElement(data_structs["data"], pos_data)
         return data
     return None
 
 
-def dataSize(dataStructs):
+def data_size(data_structs):
     """
     Retorna el tamaño de la lista de datos
     """
-    return lt.size(dataStructs["data"])
+    return lt.size(data_structs["data"])
 
 
-def req1(dataStructs):
+def req_1(data_structs):
     """
     Función que soluciona el requerimiento 1
     """
@@ -112,7 +112,7 @@ def req1(dataStructs):
     pass
 
 
-def req2(dataStructs):
+def req_2(data_structs):
     """
     Función que soluciona el requerimiento 2
     """
@@ -120,7 +120,7 @@ def req2(dataStructs):
     pass
 
 
-def req3(dataStructs):
+def req_3(data_structs):
     """
     Función que soluciona el requerimiento 3
     """
@@ -128,7 +128,7 @@ def req3(dataStructs):
     pass
 
 
-def req4(dataStructs):
+def req_4(data_structs):
     """
     Función que soluciona el requerimiento 4
     """
@@ -136,7 +136,7 @@ def req4(dataStructs):
     pass
 
 
-def req5(dataStructs):
+def req_5(data_structs):
     """
     Función que soluciona el requerimiento 5
     """
@@ -144,7 +144,7 @@ def req5(dataStructs):
     pass
 
 
-def req6(dataStructs):
+def req_6(data_structs):
     """
     Función que soluciona el requerimiento 6
     """
@@ -152,7 +152,7 @@ def req6(dataStructs):
     pass
 
 
-def req7(dataStructs):
+def req_7(data_structs):
     """
     Función que soluciona el requerimiento 7
     """
@@ -160,7 +160,7 @@ def req7(dataStructs):
     pass
 
 
-def req8(dataStructs):
+def req_8(data_structs):
     """
     Función que soluciona el requerimiento 8
     """
@@ -170,13 +170,13 @@ def req8(dataStructs):
 
 # Funciones utilizadas para comparar elementos dentro de una lista
 
-def compare(data1, data2):
+def compare(data_1, data_2):
     """
     Función encargada de comparar dos datos
     """
-    if data1["id"] > data2["id"]:
+    if data_1["id"] > data_2["id"]:
         return 1
-    elif data1["id"] < data2["id"]:
+    elif data_1["id"] < data_2["id"]:
         return -1
     else:
         return 0
@@ -184,7 +184,7 @@ def compare(data1, data2):
 # Funciones de ordenamiento
 
 
-def sortCriteria(data1, data2):
+def sort_criteria(data_1, data_2):
     """sortCriteria criterio de ordenamiento para las funciones de ordenamiento
 
     Args:
@@ -194,11 +194,11 @@ def sortCriteria(data1, data2):
     Returns:
         _type_: _description_
     """
-    return data1["id"] > data2["id"]
+    return data_1["id"] > data_2["id"]
 
 
-def sort(dataStructs):
+def sort(data_structs):
     """
     Función encargada de ordenar la lista con los datos
     """
-    sa.sort(dataStructs["data"], sortCriteria)
+    sa.sort(data_structs["data"], sort_criteria)

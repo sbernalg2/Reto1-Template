@@ -31,20 +31,20 @@ El controlador se encarga de mediar entre la vista y el modelo.
 """
 
 
-def newController():
+def new_controller():
     """
     Crea una instancia del modelo
     """
     control = {
         "model": None
     }
-    control["model"] = model.newDataStructs()
+    control["model"] = model.new_data_structs()
     return control
 
 
 # Funciones para la carga de datos
 
-def loadData(control, filename):
+def load_data(control, filename):
     """
     Carga los datos del reto
     """
@@ -67,84 +67,84 @@ def sort(control):
 
 # Funciones de consulta sobre el catálogo
 
-def getData(control, id):
+def get_data(control, id):
     """
     Retorna un dato por su ID.
     """
-    data = model.getData(control["model"], id)
+    data = model.get_data(control["model"], id)
     return data
 
 
-def req1(control):
+def req_1(control):
     """
     Retorna el resultado del requerimiento 1
     """
     # TODO: Modificar el requerimiento 1
-    req1 = model.req1(control["model"])
-    return req1
+    req_1 = model.req_1(control["model"])
+    return req_1
 
 
-def req2(control):
+def req_2(control):
     """
     Retorna el resultado del requerimiento 2
     """
     # TODO: Modificar el requerimiento 2
-    req2 = model.req2(control["model"])
-    return req2
+    req_2 = model.req_2(control["model"])
+    return req_2
 
 
-def req3(control):
+def req_3(control):
     """
     Retorna el resultado del requerimiento 3
     """
     # TODO: Modificar el requerimiento 3
-    req3 = model.req3(control["model"])
-    return req3
+    req_3 = model.req_3(control["model"])
+    return req_3
 
 
-def req4(control):
+def req_4(control):
     """
     Retorna el resultado del requerimiento 4
     """
     # TODO: Modificar el requerimiento 4
-    req4 = model.req4(control["model"])
-    return req4
+    req_4 = model.req_4(control["model"])
+    return req_4
 
 
-def req5(control):
+def req_5(control):
     """
     Retorna el resultado del requerimiento 5
     """
     # TODO: Modificar el requerimiento 5
-    req5 = model.req5(control["model"])
-    return req5
+    req_5 = model.req_5(control["model"])
+    return req_5
 
 
-def req6(control):
+def req_6(control):
     """
     Retorna el resultado del requerimiento 6
     """
     # TODO: Modificar el requerimiento 6
-    req6 = model.req6(control["model"])
-    return req6
+    req_6 = model.req_6(control["model"])
+    return req_6
 
 
-def req7(control):
+def req_7(control):
     """
     Retorna el resultado del requerimiento 7
     """
     # TODO: Modificar el requerimiento 7
-    req7 = model.req7(control["model"])
-    return req7
+    req_7 = model.req_7(control["model"])
+    return req_7
 
 
-def req8(control):
+def req_8(control):
     """
     Retorna el resultado del requerimiento 8
     """
     # TODO: Modificar el requerimiento 8
-    req8 = model.req8(control["model"])
-    return req8
+    req_8 = model.req_8(control["model"])
+    return req_8
 
 
 # Funciones para medir tiempos de ejecucion
