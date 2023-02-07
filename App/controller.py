@@ -61,8 +61,8 @@ def sort(control):
     start_time = get_time()
     model.sort(control["model"])
     end_time = get_time()
-    delta_time = delta_time(start_time, end_time)
-    return delta_time
+    delta_t = delta_time(start_time, end_time)
+    return delta_t
 
 
 # Funciones de consulta sobre el catálogo
