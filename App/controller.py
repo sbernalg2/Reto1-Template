@@ -58,10 +58,10 @@ def sort(control):
     """
     Ordena los datos del modelo
     """
-    start_time = getTime()
+    start_time = get_time()
     model.sort(control["model"])
-    end_time = getTime()
-    delta_time = deltaTime(start_time, end_time)
+    end_time = get_time()
+    delta_time = delta_time(start_time, end_time)
     return delta_time
 
 
@@ -149,14 +149,14 @@ def req_8(control):
 
 # Funciones para medir tiempos de ejecucion
 
-def getTime():
+def get_time():
     """
     devuelve el instante tiempo de procesamiento en milisegundos
     """
     return float(time.perf_counter()*1000)
 
 
-def deltaTime(start, end):
+def delta_time(start, end):
     """
     devuelve la diferencia entre tiempos de procesamiento muestreados
     """
