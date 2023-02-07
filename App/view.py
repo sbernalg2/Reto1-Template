@@ -36,12 +36,14 @@ se hace la solicitud al controlador para ejecutar la
 operación solicitada
 """
 
+
 def newController():
     """
         Se crea una instancia del controlador
     """
     control = controller.newController()
     return control
+
 
 def printMenu():
     print("Bienvenido")
@@ -57,19 +59,22 @@ def printMenu():
     print("10- Obtener dato dado un ID")
     print("0- Salir")
 
+
 def loadData(control):
     """
     Carga los datos
     """
     data = controller.loadData(control, "Ruta")
-    pass
+    return data
+
 
 def printData(control, id):
     """
         Función que imprime un dato dado su ID
     """
     data = controller.getData(control, id)
-    print("El dato con el ID",id, "es:", data)
+    print("El dato con el ID", id, "es:", data)
+
 
 def printReq1(control):
     """
@@ -77,7 +82,7 @@ def printReq1(control):
     """
     # TODO: Imprimir el resultado del requerimiento 1
     print(controller.req1(control))
-    pass
+
 
 def printReq2(control):
     """
@@ -85,7 +90,7 @@ def printReq2(control):
     """
     # TODO: Imprimir el resultado del requerimiento 2
     print(controller.req2(control))
-    pass
+
 
 def printReq3(control):
     """
@@ -93,7 +98,7 @@ def printReq3(control):
     """
     # TODO: Imprimir el resultado del requerimiento 3
     print(controller.req3(control))
-    pass
+
 
 def printReq4(control):
     """
@@ -101,7 +106,7 @@ def printReq4(control):
     """
     # TODO: Imprimir el resultado del requerimiento 4
     print(controller.req4(control))
-    pass
+
 
 def printReq5(control):
     """
@@ -109,7 +114,7 @@ def printReq5(control):
     """
     # TODO: Imprimir el resultado del requerimiento 5
     print(controller.req5(control))
-    pass
+
 
 def printReq6(control):
     """
@@ -117,7 +122,7 @@ def printReq6(control):
     """
     # TODO: Imprimir el resultado del requerimiento 6
     print(controller.req6(control))
-    pass
+
 
 def printReq7(control):
     """
@@ -125,7 +130,7 @@ def printReq7(control):
     """
     # TODO: Imprimir el resultado del requerimiento 7
     print(controller.req7(control))
-    pass
+
 
 def printReq8(control):
     """
@@ -133,7 +138,8 @@ def printReq8(control):
     """
     # TODO: Imprimir el resultado del requerimiento 8
     print(controller.req8(control))
-    pass
+
+
 # Se crea el controlador asociado a la vista
 control = newController()
 
@@ -145,7 +151,7 @@ if __name__ == "__main__":
     while True:
         printMenu()
         inputs = input('Seleccione una opción para continuar\n')
-        try: 
+        try:
             if int(inputs) == 1:
                 print("Cargando información de los archivos ....\n")
                 data = loadData(control)

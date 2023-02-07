@@ -30,6 +30,7 @@ import csv
 El controlador se encarga de mediar entre la vista y el modelo.
 """
 
+
 def newController():
     """
     Crea una instancia del modelo
@@ -40,6 +41,7 @@ def newController():
     control["model"] = model.newDataStructs()
     return control
 
+
 # Funciones para la carga de datos
 
 def loadData(control, filename):
@@ -48,6 +50,7 @@ def loadData(control, filename):
     """
     # TODO: Realizar la carga de datos
     pass
+
 
 # Funciones de ordenamiento
 
@@ -61,6 +64,7 @@ def sort(control):
     delta_time = deltaTime(start_time, end_time)
     return delta_time
 
+
 # Funciones de consulta sobre el catálogo
 
 def getData(control, id):
@@ -70,6 +74,7 @@ def getData(control, id):
     data = model.getData(control["model"], id)
     return data
 
+
 def req1(control):
     """
     Retorna el resultado del requerimiento 1
@@ -77,6 +82,7 @@ def req1(control):
     # TODO: Modificar el requerimiento 1
     req1 = model.req1(control["model"])
     return req1
+
 
 def req2(control):
     """
@@ -86,6 +92,7 @@ def req2(control):
     req2 = model.req2(control["model"])
     return req2
 
+
 def req3(control):
     """
     Retorna el resultado del requerimiento 3
@@ -93,6 +100,7 @@ def req3(control):
     # TODO: Modificar el requerimiento 3
     req3 = model.req3(control["model"])
     return req3
+
 
 def req4(control):
     """
@@ -102,6 +110,7 @@ def req4(control):
     req4 = model.req4(control["model"])
     return req4
 
+
 def req5(control):
     """
     Retorna el resultado del requerimiento 5
@@ -109,6 +118,7 @@ def req5(control):
     # TODO: Modificar el requerimiento 5
     req5 = model.req5(control["model"])
     return req5
+
 
 def req6(control):
     """
@@ -118,6 +128,7 @@ def req6(control):
     req6 = model.req6(control["model"])
     return req6
 
+
 def req7(control):
     """
     Retorna el resultado del requerimiento 7
@@ -126,6 +137,7 @@ def req7(control):
     req7 = model.req7(control["model"])
     return req7
 
+
 def req8(control):
     """
     Retorna el resultado del requerimiento 8
@@ -133,6 +145,7 @@ def req8(control):
     # TODO: Modificar el requerimiento 8
     req8 = model.req8(control["model"])
     return req8
+
 
 # Funciones para medir tiempos de ejecucion
 
