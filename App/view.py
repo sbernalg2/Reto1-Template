@@ -27,7 +27,8 @@ from DISClib.ADT import list as lt
 from DISClib.ADT import stack as st
 from DISClib.ADT import queue as qu
 assert cf
-#from tabulate import tabulate
+from tabulate import tabulate
+import traceback
 
 """
 La vista se encarga de la interacción con el usuario
@@ -41,8 +42,8 @@ def new_controller():
     """
         Se crea una instancia del controlador
     """
-    control = controller.new_controller()
-    return control
+    #TODO: Llamar la función del controlador donde se crean las estructuras de datos
+    pass
 
 
 def print_menu():
@@ -56,7 +57,6 @@ def print_menu():
     print("7- Ejecutar Requerimiento 6")
     print("8- Ejecutar Requerimiento 7")
     print("9- Ejecutar Requerimiento 8")
-    print("10- Obtener dato dado un ID")
     print("0- Salir")
 
 
@@ -64,24 +64,23 @@ def load_data(control):
     """
     Carga los datos
     """
-    data = controller.load_data(control, "Ruta")
-    return data
+    #TODO: Realizar la carga de datos
+    pass
 
 
 def print_data(control, id):
     """
         Función que imprime un dato dado su ID
     """
-    data = controller.get_data(control, id)
-    print("El dato con el ID", id, "es:", data)
-
+    #TODO: Realizar la función para imprimir un elemento
+    pass
 
 def print_req_1(control):
     """
         Función que imprime la solución del Requerimiento 1 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 1
-    print(controller.req_1(control))
+    pass
 
 
 def print_req_2(control):
@@ -89,7 +88,7 @@ def print_req_2(control):
         Función que imprime la solución del Requerimiento 2 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 2
-    print(controller.req_2(control))
+    pass
 
 
 def print_req_3(control):
@@ -97,7 +96,7 @@ def print_req_3(control):
         Función que imprime la solución del Requerimiento 3 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 3
-    print(controller.req_3(control))
+    pass
 
 
 def print_req_4(control):
@@ -105,7 +104,7 @@ def print_req_4(control):
         Función que imprime la solución del Requerimiento 4 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 4
-    print(controller.req_4(control))
+    pass
 
 
 def print_req_5(control):
@@ -113,7 +112,7 @@ def print_req_5(control):
         Función que imprime la solución del Requerimiento 5 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 5
-    print(controller.req_5(control))
+    pass
 
 
 def print_req_6(control):
@@ -121,7 +120,7 @@ def print_req_6(control):
         Función que imprime la solución del Requerimiento 6 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 6
-    print(controller.req_6(control))
+    pass
 
 
 def print_req_7(control):
@@ -129,7 +128,7 @@ def print_req_7(control):
         Función que imprime la solución del Requerimiento 7 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 7
-    print(controller.req_7(control))
+    pass
 
 
 def print_req_8(control):
@@ -137,7 +136,7 @@ def print_req_8(control):
         Función que imprime la solución del Requerimiento 8 en consola
     """
     # TODO: Imprimir el resultado del requerimiento 8
-    print(controller.req_8(control))
+    pass
 
 
 # Se crea el controlador asociado a la vista
@@ -181,10 +180,6 @@ if __name__ == "__main__":
             elif int(inputs) == 9:
                 print_req_8(control)
 
-            elif int(inputs) == 10:
-                id = input("Ingrese un id: ")
-                print_data(control, id)
-
             elif int(inputs) == 0:
                 working = False
                 print("\nGracias por utilizar el programa")
@@ -193,4 +188,5 @@ if __name__ == "__main__":
                 print("Opción errónea, vuelva a elegir.\n")
         except ValueError:
             print("Ingrese una opción válida.\n")
+            traceback.print_exc()
     sys.exit(0)
