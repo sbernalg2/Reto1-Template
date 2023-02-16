@@ -41,6 +41,33 @@ Se define la estructura de un catálogo de videos. El catálogo tendrá
 dos listas, una para los videos, otra para las categorias de los mismos.
 """
 
+#Funciones para agregar informacion al catalogo
+
+def newCatalog(tipoEstructura):
+
+    catalog = {"data":None}
+
+    if tipoEstructura == 1:
+
+            catalog["data"] = lt.newList(datastructure="ARRAY_LIST",
+                                            cmpfunction=compareRenta)
+    elif tipoEstructura == 2:
+
+            catalog["data"] = lt.newList(datastructure="SINGLE_LINKED",
+                                            cmpfunction=compareRenta)
+
+    return catalog
+
+def addRenta(catalog, data):
+
+    lt.addLast(catalog["data"], data)
+
+    return catalog
+
+def catalogSize (catalog):
+
+    return lt.size(catalog["data"])
+
 # Construccion de modelos
 
 
@@ -49,14 +76,8 @@ def new_data_structs():
     Inicializa las estructuras de datos del modelo. Las crea de
     manera vacía para posteriormente almacenar la información.
     """
-    data_structs = {
-        "data": None,
-    }
-
-    data_structs["data"] = lt.newList(datastructure="ARRAY_LIST",
-                                     cmpfunction=compare)
-
-    return data_structs
+    #TODO: Inicializar las estructuras de datos
+    pass
 
 
 # Funciones para agregar informacion al modelo
@@ -65,10 +86,8 @@ def add_data(data_structs, data):
     """
     Función para agregar nuevos elementos a la lista
     """
-    d = new_data(data["id"], data["info"])
-    lt.addLast(data_structs["data"], d)
-
-    return data_structs
+    #TODO: Crear la función para agregar elementos a una lista
+    pass
 
 
 # Funciones para creacion de datos
@@ -77,11 +96,8 @@ def new_data(id, info):
     """
     Crea una nueva estructura para modelar los datos
     """
-    data = {'id': 0, "info": ""}
-    data["id"] = id
-    data["info"] = info
-
-    return data
+    #TODO: Crear la función para estructurar los datos
+    pass
 
 
 # Funciones de consulta
@@ -90,18 +106,16 @@ def get_data(data_structs, id):
     """
     Retorna un dato a partir de su ID
     """
-    pos_data = lt.isPresent(data_structs["data"], id)
-    if pos_data > 0:
-        data = lt.getElement(data_structs["data"], pos_data)
-        return data
-    return None
+    #TODO: Crear la función para obtener un dato de una lista
+    pass
 
 
 def data_size(data_structs):
     """
     Retorna el tamaño de la lista de datos
     """
-    return lt.size(data_structs["data"])
+    #TODO: Crear la función para obtener el tamaño de una lista
+    pass
 
 
 def req_1(data_structs):
@@ -170,16 +184,15 @@ def req_8(data_structs):
 
 # Funciones utilizadas para comparar elementos dentro de una lista
 
-def compare(data_1, data_2):
+def compareRenta(data_1, data_2):
     """
     Función encargada de comparar dos datos
     """
-    if data_1["id"] > data_2["id"]:
-        return 1
-    elif data_1["id"] < data_2["id"]:
-        return -1
-    else:
-        return 0
+    if (data_1["Código actividad económica"] == data_2["Código actividad económica"]):
+        return True
+    elif (data_1["Código actividad económica"] > data_2["Código actividad económica"]):
+        return False
+    return False
 
 # Funciones de ordenamiento
 
@@ -194,11 +207,13 @@ def sort_criteria(data_1, data_2):
     Returns:
         _type_: _description_
     """
-    return data_1["id"] > data_2["id"]
+    #TODO: Crear función comparadora para ordenar
+    pass
 
 
 def sort(data_structs):
     """
     Función encargada de ordenar la lista con los datos
     """
-    sa.sort(data_structs["data"], sort_criteria)
+    #TODO: Crear función de ordenamiento
+    pass
