@@ -42,13 +42,8 @@ def new_controller(tipoEstructura):
     """
         Se crea una instancia del controlador
     """
-<<<<<<< HEAD
     control = controller.new_controller(tipoEstructura)
     return control
-=======
-    #TODO: Llamar la función del controlador donde se crean las estructuras de datos
-    pass
->>>>>>> 3c4fef34498dbd817077cd6c815c09292aa768f6
 
 def print_menu():
     print("Bienvenido")
@@ -68,13 +63,8 @@ def load_data(control,tipoEstructura):
     """
     Carga los datos
     """
-<<<<<<< HEAD
     x = controller.loadData(control, tipoEstructura)
     return x
-=======
-    #TODO: Realizar la carga de datos
-    pass
->>>>>>> 3c4fef34498dbd817077cd6c815c09292aa768f6
 
 
 def print_data(control, id):

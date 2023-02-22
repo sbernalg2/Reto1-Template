@@ -35,15 +35,10 @@ def new_controller(tipoEstructura):
     """
     Crea una instancia del modelo
     """
-<<<<<<< HEAD
     control = {'model':None
                  }
     control['model'] = model.newCatalog(tipoEstructura)
     return control
-=======
-    #TODO: Llamar la función del modelo que crea las estructuras de datos
-    pass
->>>>>>> 3c4fef34498dbd817077cd6c815c09292aa768f6
 
 
 # Funciones para la carga de datos

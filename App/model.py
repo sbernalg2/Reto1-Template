@@ -188,16 +188,11 @@ def compareRenta(data_1, data_2):
     """
     Función encargada de comparar dos datos
     """
-<<<<<<< HEAD
     if (data_1["Código actividad económica"] == data_2["Código actividad económica"]):
         return True
     elif (data_1["Código actividad económica"] > data_2["Código actividad económica"]):
         return False
     return False
-=======
-    #TODO: Crear función comparadora de la lista
-    pass
->>>>>>> 3c4fef34498dbd817077cd6c815c09292aa768f6
 
 # Funciones de ordenamiento
 
